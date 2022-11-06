@@ -47,7 +47,6 @@ async def choices(ctx, 기간: Option(str, "다음 중 고르세요.", choices=[
 
 
 
-
 @bot.slash_command(name="지연", description="지연율", guild_ids = [1036491989811736677])
 async def ping(ctx):
     embed = discord.Embed(title="디스코드", description=f"지연율: {round(bot.latency * 1000)}ms")
