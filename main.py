@@ -29,7 +29,7 @@ async def on_member_remove(member):
     await channel.send(f"{member.mention}님이 이세계로 떠났습니다.")
 
 # 인기
-@bot.slash_command(name="인기", description="인기 차트 보여주기", guild_ids = [1036491989811736677])
+@bot.slash_command(name="인기", description="인기 차트 확인하기", guild_ids = [1036491989811736677])
 async def choices(ctx, 기간: Option(str, "다음 중 고르세요.", choices=["실시간", "이번주", "분기", "역대"])):
     term={"실시간": "4hour", "이번주": "week", "분기": "quarter", "역대": "history"}.get(기간)
     import rank
@@ -42,6 +42,20 @@ async def choices(ctx, 기간: Option(str, "다음 중 고르세요.", choices=[
     embed.add_field(name="랭킹", value=f"{rank_ranking}", inline=True)
     embed.add_field(name="제목", value=f"{rank_name}", inline=True)
     # embed.add_field(name="장르", value=f"{rank_genres}", inline=True)
+
+    await ctx.respond(embed=embed)
+
+# 신작
+@bot.slash_command(name="신작", description="요일별 신작 확인하기", guild_ids = [1036491989811736677])
+async def choices(ctx, 요일: Option(str, "다음 중 고르세요.", choices=["오늘", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"])):
+    import daily
+    result = daily.daily(요일)
+    daily_order = '\n'.join(f'{i}' for i, x in enumerate(result, 1))
+    daily_name = '\n'.join(f'[{x["name"]}](<https://laftel.net/item/{x["id"]}>)' for x in result)
+
+    embed = discord.Embed(title=f"{요일} 신작 애니!", colour=discord.Colour.random())
+    embed.add_field(name="순서", value=f"{daily_order}", inline=True)
+    embed.add_field(name="제목", value=f"{daily_name}", inline=True)
 
     await ctx.respond(embed=embed)
 
