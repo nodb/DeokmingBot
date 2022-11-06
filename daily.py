@@ -1,22 +1,30 @@
 from urllib.parse import quote
 import requests
 from bs4 import BeautifulSoup
+from datetime import datetime
 
-# day = input()  # 이름 입력
-# encoding = quote(day)
+def daily(day):
+  header = {'laftel': 'TeJava'}
 
-header = {'laftel': 'TeJava'}
+  laftel_API = 'https://laftel.net/daily'
+  response = requests.get(url = laftel_API, headers = header)
+  response.encoding = None
 
-laftel_API = 'https://laftel.net/daily'
-response = requests.get(url = laftel_API, headers = header)
-response.encoding = None
+  soup = BeautifulSoup(response.text, "lxml")
 
-soup = BeautifulSoup(response.text, "lxml")
+  if day=="오늘":
+    today = datetime.today().weekday()
+    day = {0: "월요일", 1: "화요일", 2: "수요일", 3: "목요일", 4: "금요일", 5: "토요일", 6: "일요일"}.get(today)
 
-for day in ["월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"]:
-    results = soup.find("h3", text=day).next_siblings
-    print(day)
-    for x in results:
-        print(x.get_text())     # 이름
-        print("https://laftel.net" + quote(x["href"]))  # url
-    print('\n')
+  results = soup.find("h3", text=day).next_siblings
+
+  result = []
+  for i, x in enumerate(results, 1):
+    name = x.get_text()
+    if name.strip()[-2]=='U' and name.strip()[-1]=='P':
+      name = name[:-2]
+    id = x["href"]
+    id = id[6:11]
+    result.append({'name': name, 'id': id})
+
+  return result
