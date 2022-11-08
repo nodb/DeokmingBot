@@ -1,9 +1,8 @@
 import discord
 from discord.commands import Option
-# from discord.http import Route
-# from discord.ext import commands
-# from discord import app_commands
+from datetime import datetime
 import tokenkey
+import math
 
 bot = discord.Bot()
 
@@ -39,7 +38,7 @@ async def choices(ctx, 기간: Option(str, "다음 중 고르세요.", choices=[
     # rank_genres = '\n'.join(f'{x["genres"]}' for x in result)
 
     embed = discord.Embed(title=f"{기간} 인기 애니!", colour=discord.Colour.random())
-    embed.add_field(name="랭킹", value=f"{rank_ranking}", inline=True)
+    embed.add_field(name="순위", value=f"{rank_ranking}", inline=True)
     embed.add_field(name="제목", value=f"{rank_name}", inline=True)
     # embed.add_field(name="장르", value=f"{rank_genres}", inline=True)
 
@@ -58,6 +57,37 @@ async def choices(ctx, 요일: Option(str, "다음 중 고르세요.", choices=[
     embed.add_field(name="제목", value=f"{daily_name}", inline=True)
 
     await ctx.respond(embed=embed)
+    
+# 분기
+@bot.slash_command(name="분기", description="분기별 애니 확인하기", guild_ids = [1036491989811736677])
+async def choices(ctx, 년도: Option(int, "예) 2000"), 분기: Option(int, "다음 중 고르세요.", choices=["1", "2", "3", "4"])):
+    year = int(datetime.now().date().strftime("%Y"))
+    if 년도<=year and 년도>=1918:
+        import quarter
+        date=f"{년도}년 {분기}분기"
+        result = quarter.quarter(date)
+        count = len(result)
+
+        embed = discord.Embed(title=f"{년도}년 {분기}분기 애니!", description=f"총 작품 : {count}개", colour=discord.Colour.random())
+        await ctx.respond(embed=embed)
+
+        page = 15
+        page_count = 1
+        title_count = 1
+        while (len(result) > 0):
+            result_page = result[:page]
+            result = result[page:]
+            quater_order = '\n'.join(f'{i}' for i in range(title_count, title_count+len(result_page)))
+            quater_name = '\n'.join(f'[{x["name"]}](<https://laftel.net/item/{x["id"]}>)' for x in result_page)
+            embed = discord.Embed(title="", description="", colour=discord.Colour.random())
+            embed.add_field(name="순위", value=f"{quater_order}", inline=True)
+            embed.add_field(name="제목", value=f"{quater_name}", inline=True)
+            embed.set_footer(text=f"{page_count} / {math.ceil(count/page)}")
+            await ctx.send(embed=embed)
+            page_count += 1
+            title_count += page
+    else:
+        await ctx.respond(f"검색 가능한 해는 '1918~{year}' 입니다. 다시 검색해주세요.", ephemeral=True)    # 비공개 상호작용
 
 
 
@@ -86,22 +116,22 @@ async def choices(ctx, text: Option(str, "다음 중 고르세요.", choices=["�
 #             await ctx.respond(f"<@!{interaction.user.id}> 님이 실시간 선택!")
 #             await interaction.response.defer()          # 상호작용 실패 -> 상호작용 연기
 #             # await interaction.response.send_message("Button clicked")
-# 
+#
 #         @discord.ui.button(label="이번주", style=discord.ButtonStyle.primary)
 #         async def primary(self, button: discord.ui.Button, interaction: discord.Interaction):
 #             await ctx.respond(f"<@!{interaction.user.id}> 님이 이번주 선택!")
 #             await interaction.response.defer()          # 상호작용 실패 -> 상호작용 연기
-# 
+#
 #         @discord.ui.button(label="분기", style=discord.ButtonStyle.green)
 #         async def green(self, button: discord.ui.Button, interaction: discord.Interaction):
 #             await ctx.respond(f"<@!{interaction.user.id}> 님이 분기 선택!")
 #             await interaction.response.defer()          # 상호작용 실패 -> 상호작용 연기
-# 
+#
 #         @discord.ui.button(label="역대", style=discord.ButtonStyle.gray)
 #         async def gray(self, button: discord.ui.Button, interaction: discord.Interaction):
 #             await ctx.respond(f"<@!{interaction.user.id}> 님이 역대 선택!")
 #             await interaction.response.defer()          # 상호작용 실패 -> 상호작용 연기
-# 
+#
 #     await ctx.respond("기간을 선택하세요.", view=Button())
 
 
