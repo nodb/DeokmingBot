@@ -89,6 +89,26 @@ async def choices(ctx, 년도: Option(int, "예) 2000"), 분기: Option(int, "�
     else:
         await ctx.respond(f"검색 가능한 해는 '1918~{year}' 입니다. 다시 검색해주세요.", ephemeral=True)    # 비공개 상호작용
 
+# 애니
+@bot.slash_command(name="애니", description="작품 검색하기", guild_ids = [1036491989811736677])
+async def choices(ctx, 작품: Option(str, "문자열 입력하기")):
+    import name
+    from urllib.parse import quote
+    result = name.name(작품)
+
+    result[2] = result[2].replace("\r", "")
+    result[2] = result[2].replace("\n", " ")
+    embed = discord.Embed(title=result[1], description=result[2], url="https://laftel.net/item/"+str(result[0]), colour=discord.Colour.random())
+    embed.set_thumbnail(url=result[3])
+    result[4]=result[4].replace("|", "\n")
+    embed.add_field(name="출시", value=result[4], inline=True)
+    embed.add_field(name="이용등급", value=result[5], inline=True)
+    embed.add_field(name="평점", value=result[6], inline=True)
+    embed.add_field(name="제작사", value=result[7], inline=True)
+    embed.add_field(name="장르", value=result[8][0]+", "+result[8][1], inline=True)
+    embed.add_field(name="다른작품", value=f"[더보기](<https://laftel.net/search?keyword={quote(작품)}>)", inline=True)
+
+    await ctx.respond(embed=embed)
 
 
 @bot.slash_command(name="지연", description="지연율", guild_ids = [1036491989811736677])
