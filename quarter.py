@@ -22,6 +22,5 @@ def quarter(date):
             laftel_API = next
         else:
             break
-        # time.sleep(random.randint(1, 2))
 
     return result
