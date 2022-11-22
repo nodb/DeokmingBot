@@ -37,7 +37,7 @@ async def on_member_remove(member):
 ## 주요 명령어
 
 # 명령어
-@bot.slash_command(name="명령어", description="덕밍아웃 명령어 목록", guild_ids=[1036491989811736677])
+@bot.slash_command(name="명령어", description="덕밍아웃 명령어 목록")
 async def command(ctx):
     embed = discord.Embed(title="덕밍아웃 주요 명령어!", colour=discord.Colour.random())
     embed.add_field(name="작품 검색!",
@@ -71,7 +71,7 @@ async def command(ctx):
 
 
 # 애니
-@bot.slash_command(name="애니", description="작품 검색하기", guild_ids=[1036491989811736677])
+@bot.slash_command(name="애니", description="작품 검색하기")
 async def choices(ctx, 작품: Option(str, "제목을 입력하세요")):
     import name
     from urllib.parse import quote
@@ -94,7 +94,7 @@ async def choices(ctx, 작품: Option(str, "제목을 입력하세요")):
 
 
 # 장르
-@bot.slash_command(name="장르", description="장르별 작품 검색하기", guild_ids=[1036491989811736677])
+@bot.slash_command(name="장르", description="장르별 작품 검색하기")
 async def choices(ctx,
                   sf: Option(str, "해당 장르를 선택하려면 +, 제외하려면 -을 입력하세요.", choices=["+", "-"], default='0'),
                   개그: Option(str, "해당 장르를 선택하려면 +, 제외하려면 -을 입력하세요.", choices=["+", "-"], default='0'),
@@ -164,7 +164,7 @@ async def choices(ctx,
 
 
 # 인기
-@bot.slash_command(name="인기", description="인기 차트 확인하기", guild_ids=[1036491989811736677])
+@bot.slash_command(name="인기", description="인기 차트 확인하기")
 async def choices(ctx, 기간: Option(str, "다음 중 고르세요.", choices=["실시간", "이번주", "분기", "역대"])):
     term = {"실시간": "4hour", "이번주": "week", "분기": "quarter", "역대": "history"}.get(기간)
     import rank
@@ -182,7 +182,7 @@ async def choices(ctx, 기간: Option(str, "다음 중 고르세요.", choices=[
 
 
 # 신작
-@bot.slash_command(name="신작", description="요일별 신작 확인하기", guild_ids=[1036491989811736677])
+@bot.slash_command(name="신작", description="요일별 신작 확인하기")
 async def choices(ctx, 요일: Option(str, "다음 중 고르세요.", choices=["오늘", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"])):
     import daily
     result = daily.daily(요일)
@@ -197,7 +197,7 @@ async def choices(ctx, 요일: Option(str, "다음 중 고르세요.", choices=[
 
 
 # 분기
-@bot.slash_command(name="분기", description="분기별 작품 확인하기", guild_ids=[1036491989811736677])
+@bot.slash_command(name="분기", description="분기별 작품 확인하기")
 async def choices(ctx, 년도: Option(int, "예) 2000"), 분기: Option(int, "다음 중 고르세요.", choices=["1", "2", "3", "4"])):
     year = int(dt.now().date().strftime("%Y"))
     if 년도 <= year and 년도 >= 1918:
