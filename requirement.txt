@@ -1,0 +1,5 @@
+discord
+discord.py
+py-cord
+beautifulsoup4
+lxml

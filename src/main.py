@@ -251,6 +251,14 @@ async def news(ctx):
     await ctx.send(embed=embed)
 
 # 제작자
+@bot.command(name="제작")
+async def made(ctx):
+    embed = discord.Embed(title="덕밍아웃\nDeokmingBot", description="디스코드 애니메이션 추천 봇", colour=discord.Colour.random())
+    embed.add_field(name=f":tools: 제작", value="***[nodb](https://github.com/nodb)***", inline=False)
+    embed.add_field(name=f":open_file_folder: 프로젝트", value="***[DeokmingBot](https://github.com/nodb/DeokmingBot)***", inline=False)
+    embed.set_thumbnail(url="https://nodb.github.io/assets/img/logo.jpg")
+    embed.set_image(url=discord.Member.ctx.author.display_avatar)
+    await ctx.send(embed=embed)
 
 
     
