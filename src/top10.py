@@ -1,7 +1,6 @@
 from urllib.parse import quote
 import requests
 
-
 def top10():
     top_API = 'https://api.signal.bz/news/realtime'
     response = requests.get(url=top_API)

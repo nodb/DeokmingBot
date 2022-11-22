@@ -1,4 +1,3 @@
-from urllib.parse import quote
 import requests
 def info(id):
     header = {'laftel': 'TeJava'}

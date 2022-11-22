@@ -34,6 +34,8 @@ async def on_member_remove(member):
     await channel.send(f"{member.mention}님이 원래 세계로 돌아갔습니다.")
 
 
+## 주요 명령어
+
 # 명령어
 @bot.slash_command(name="명령어", description="덕밍아웃 명령어 목록", guild_ids=[1036491989811736677])
 async def command(ctx):
@@ -225,6 +227,8 @@ async def choices(ctx, 년도: Option(int, "예) 2000"), 분기: Option(int, "�
     else:
         await ctx.respond(f"검색 가능한 해는 '1918~{year}' 입니다. 다시 검색해주세요.", ephemeral=True)  # 비공개 상호작용
 
+
+## 숨은 명령어
 
 # 지연율
 @bot.command(name="지연")

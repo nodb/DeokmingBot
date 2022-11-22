@@ -23,17 +23,3 @@ def rank(term):
       break
 
   return result
-
-# 전체 출력
-# print(results)
-
-# 목록 출력
-# for x in results:
-#   print(x["id"])        # id
-#   print(x["name"])      # 제목
-#   print(x["img"])       # 메인 사진
-#   print(x["images"][0]["img_url"])  # 원본 메인 사진
-#   if(len(x["images"])==2):
-#     print(x["images"][1]["img_url"])  # 원본 배경 사진
-#   print(x["is_adult"])  # 성인용 여부
-#   print(x["genres"], '\n')    # 장르
