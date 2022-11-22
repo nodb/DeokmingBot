@@ -1,6 +1,7 @@
 import discord
 from discord.commands import Option
 from discord.ext import commands
+from datetime import datetime as dt
 import datetime
 import tokenkey
 import math
@@ -30,7 +31,7 @@ async def on_member_join(member):
 @bot.event
 async def on_member_remove(member):
     channel = member.guild.system_channel
-    await channel.send(f"{member.mention}님이 이세계로 떠났습니다.")
+    await channel.send(f"{member.mention}님이 원래 세계로 돌아갔습니다.")
 
 
 # 명령어
@@ -196,7 +197,7 @@ async def choices(ctx, 요일: Option(str, "다음 중 고르세요.", choices=[
 # 분기
 @bot.slash_command(name="분기", description="분기별 작품 확인하기", guild_ids=[1036491989811736677])
 async def choices(ctx, 년도: Option(int, "예) 2000"), 분기: Option(int, "다음 중 고르세요.", choices=["1", "2", "3", "4"])):
-    year = int(datetime.now().date().strftime("%Y"))
+    year = int(dt.now().date().strftime("%Y"))
     if 년도 <= year and 년도 >= 1918:
         import quarter
         date = f"{년도}년 {분기}분기"
@@ -225,13 +226,6 @@ async def choices(ctx, 년도: Option(int, "예) 2000"), 분기: Option(int, "�
         await ctx.respond(f"검색 가능한 해는 '1918~{year}' 입니다. 다시 검색해주세요.", ephemeral=True)  # 비공개 상호작용
 
 
-# # 지연율
-# @bot.slash_command(name="지연", description="봇 지연율", guild_ids=[1036491989811736677])
-# async def ping(ctx):
-#     embed = discord.Embed(title=f"지연율: {round(bot.latency * 1000)}ms")
-#     await ctx.respond(embed=embed)
-
-
 # 지연율
 @bot.command(name="지연")
 async def ping(ctx):
@@ -257,115 +251,7 @@ async def made(ctx):
     embed.add_field(name=f":tools: 제작", value="***[nodb](https://github.com/nodb)***", inline=False)
     embed.add_field(name=f":open_file_folder: 프로젝트", value="***[DeokmingBot](https://github.com/nodb/DeokmingBot)***", inline=False)
     embed.set_thumbnail(url="https://nodb.github.io/assets/img/logo.jpg")
-    embed.set_image(url=discord.Member.ctx.author.display_avatar)
+    embed.set_image(url="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/logo.png")
     await ctx.send(embed=embed)
-
-
-    
-    
-# 버튼
-# @bot.slash_command(name="인기", description="인기 애니를 표시합니다.", guild_ids = [1036491989811736677])
-# async def button(ctx):
-#     class Button(discord.ui.View):
-#         @discord.ui.button(label="실시간", style=discord.ButtonStyle.red)
-#         async def red(self, button: discord.ui.Button, interaction: discord.Interaction):
-#             await ctx.respond(f"<@!{interaction.user.id}> 님이 실시간 선택!")
-#             await interaction.response.defer()          # 상호작용 실패 -> 상호작용 연기
-#             # await interaction.response.send_message("Button clicked")
-#
-#         @discord.ui.button(label="이번주", style=discord.ButtonStyle.primary)
-#         async def primary(self, button: discord.ui.Button, interaction: discord.Interaction):
-#             await ctx.respond(f"<@!{interaction.user.id}> 님이 이번주 선택!")
-#             await interaction.response.defer()          # 상호작용 실패 -> 상호작용 연기
-#
-#         @discord.ui.button(label="분기", style=discord.ButtonStyle.green)
-#         async def green(self, button: discord.ui.Button, interaction: discord.Interaction):
-#             await ctx.respond(f"<@!{interaction.user.id}> 님이 분기 선택!")
-#             await interaction.response.defer()          # 상호작용 실패 -> 상호작용 연기
-#
-#         @discord.ui.button(label="역대", style=discord.ButtonStyle.gray)
-#         async def gray(self, button: discord.ui.Button, interaction: discord.Interaction):
-#             await ctx.respond(f"<@!{interaction.user.id}> 님이 역대 선택!")
-#             await interaction.response.defer()          # 상호작용 실패 -> 상호작용 연기
-#
-#     await ctx.respond("기간을 선택하세요.", view=Button())
-
-
-# @bot.slash_command(name="인기", description="기간을 선택하세요.", guild_ids = [1036491989811736677])
-# async def ranking(ctx):
-#     class Button1(discord.ui.View):
-#         @discord.ui.button(label="실시간", style=discord.ButtonStyle.link)
-#         async def primary(self, button: discord.ui.Button, interaction: discord.Interaction):
-#             await ctx.respond(f"<@!{interaction.user.id}> 님이 실시간을 선택!")
-#             await interaction.response.defer()      # 상호작용 실패 -> 상호작용 연기
-#             # await interaction.response.send_message("Button clicked")
-#
-#         @discord.ui.button(label="이번주", style=discord.ButtonStyle.green)
-#         async def green(self, button: discord.ui.Button, interaction: discord.Interaction):
-#             await ctx.respond(f"<@!{interaction.user.id}> 님이 green 버튼을 눌렀어요!")
-#             await interaction.response.defer()  # 상호작용 실패 -> 상호작용 연기
-#
-#         @discord.ui.button(label="분기", style=discord.ButtonStyle.gray)
-#         async def gray(self, button: discord.ui.Button, interaction: discord.Interaction):
-#             await ctx.respond(f"<@!{interaction.user.id}> 님이 gray 버튼을 눌렀어요!")
-#             await interaction.response.defer()  # 상호작용 실패 -> 상호작용 연기
-#
-#         @discord.ui.button(label="역대", style=discord.ButtonStyle.gray)
-#         async def gray(self, button: discord.ui.Button, interaction: discord.Interaction):
-#             await ctx.respond(f"<@!{interaction.user.id}> 님이 gray 버튼을 눌렀어요!")
-#             await interaction.response.defer()  # 상호작용 실패 -> 상호작용 연기
-#
-#     await ctx.respond("버튼을 누르세요.", view=Button1())
-
-
-# bot = commands.Bot(command_prefix='/', intents=discord.Intents.all())
-#
-# class abot(discord.Client):
-#     def __init__(self):
-#         super().__init__(intents=discord.Intents.default())
-#         self.synced = False
-#
-#     async def on_ready(self):
-#         await tree.sync(guild=discord.Object(id=1036491989811736677))
-#         self.synced = True
-#         print("봇 온라인")
-#
-# bot = abot()
-# tree = app_commands.CommandTree(bot)
-#
-# @tree.command(name="ping", description="탁구",guild=discord.Object(id=1036491989811736677))
-# async def self(interation: discord.Interaction):
-#     await interation.response.send_message("pong")
-#
-# @tree.command(name="안녕", description="인사를 한다",guild=discord.Object(id=1036491989811736677))
-# async def self(interation: discord.Interaction):
-#     await interation.response.send_message("그래 안녕")
-#
-# @tree.command(name="abc", description="영어",guild=discord.Object(id=1036491989811736677))
-# async def self(ctx):
-#     await ctx.send(f"pong! {round(bot.latency*1000)}ms")
-
-
-# @bot.command(aliases=['질문', '문제'])
-# async def eightball(ctx, *, question):
-#     await ctx.send(f"**질문: ** {question}\n**대답: ** 반응속도는 {round(bot.latency*1000)}ms")
-#
-# @bot.command()
-# async def embed(ctx, member: discord.Member = None):
-#     if member == None:
-#         member = ctx.author
-#
-#     name = member.display_name
-#     pfp = member.display_avatar
-#
-#     embed = discord.Embed(title="제목", description="설명", colour=discord.Colour.random())
-#     embed.set_author(name=f"{name}", url="https://nodb.github.io/", icon_url="https://nodb.github.io/assets/img/logo.jpg")
-#     embed.set_thumbnail(url=f"{pfp}")
-#     embed.add_field(name="필드1", value="값1", inline=False)
-#     embed.add_field(name="필드2", value="값2", inline=True)
-#     embed.add_field(name="필드3", value="값3", inline=True)
-#     embed.set_footer(text=f"{name}이 embed 만듦")
-#
-#     await ctx.send(embed=embed)
 
 bot.run(tokenkey.key)  # 봇 온라인 전환, 반드시 맨 아래 위치
