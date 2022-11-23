@@ -3,11 +3,9 @@ from discord.commands import Option
 from discord.ext import commands
 from datetime import datetime as dt
 import datetime
-# import tokenkey
+import tokenkey
 import math
-import os
-
-# bot = discord.Bot()
+# from webdriver import keep_alive    # replit, uptimerobot
 
 bot = commands.Bot(command_prefix='/', intents=discord.Intents.all())
 
@@ -202,6 +200,7 @@ async def choices(ctx, 요일: Option(str, "다음 중 고르세요.", choices=[
 async def choices(ctx, 년도: Option(int, "예) 2000"), 분기: Option(int, "다음 중 고르세요.", choices=["1", "2", "3", "4"])):
     year = int(dt.now().date().strftime("%Y"))
     if 년도 <= year and 년도 >= 1918:
+        await ctx.respond("작품이 많은 경우 출력이 지연될 수 있습니다.", ephemeral=True)
         import quarter
         date = f"{년도}년 {분기}분기"
         result = quarter.quarter(date)
@@ -259,6 +258,5 @@ async def made(ctx):
     embed.set_image(url="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/logo.png")
     await ctx.send(embed=embed)
 
-access_token = os.environ['BOT_TOKEN']
-# bot.run(tokenkey.key)  # 봇 온라인 전환, 반드시 맨 아래 위치
-bot.run(access_token)
+# keep_alive()
+bot.run(tokenkey.key)  # 봇 온라인 전환, 반드시 맨 아래 위치
