@@ -5,6 +5,7 @@ from datetime import datetime as dt
 import datetime
 # import tokenkey
 import math
+import os
 
 # bot = discord.Bot()
 
@@ -258,5 +259,6 @@ async def made(ctx):
     embed.set_image(url="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/logo.png")
     await ctx.send(embed=embed)
 
+access_token = os.environ["BOT_TOKEN"]
 # bot.run(tokenkey.key)  # 봇 온라인 전환, 반드시 맨 아래 위치
-bot.run(token)
+bot.run(access_token)
