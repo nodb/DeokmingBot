@@ -3,7 +3,7 @@ from discord.commands import Option
 from discord.ext import commands
 from datetime import datetime as dt
 import datetime
-import tokenkey
+# import tokenkey
 import math
 
 # bot = discord.Bot()
@@ -258,4 +258,5 @@ async def made(ctx):
     embed.set_image(url="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/logo.png")
     await ctx.send(embed=embed)
 
-bot.run(tokenkey.key)  # 봇 온라인 전환, 반드시 맨 아래 위치
+# bot.run(tokenkey.key)  # 봇 온라인 전환, 반드시 맨 아래 위치
+bot.run(token)
