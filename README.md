@@ -1,4 +1,5 @@
 # 디스코드 애니메이션 추천 봇 </br> 덕밍아웃 | DeokmingBot
+<img alt = "덕밍아웃로고" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/logo.png" width="300">
 
 ## 프로젝트 제작
 
