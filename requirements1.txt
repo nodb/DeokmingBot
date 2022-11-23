@@ -1,0 +1,7 @@
+discord
+discord.py
+py-cord
+beautifulsoup4
+lxml
+requests
+urllib3
