@@ -149,7 +149,7 @@ pip install -r requirement.txt 명령어로 한번에 설치 가능합니다.
 - [Discord Developer Portal](https://discord.com/developers/docs/intro) - 디스코드 공식 API 참고
 - [discord.py](https://discordpy.readthedocs.io/en/latest/index.html) - discord.py 명령어 참고
 - [Civo | youtube | How to make Your First Discord Bot](https://www.youtube.com/watch?v=2u9a9WmlQro&ab_channel=Civo) - discord.py 명령어 참고
-- [BeautifulSoup와 requests로 웹 파싱해보기](https://library.gabia.com/contents/9239/) - 파이썬 웹 스크래핑 참고
+- [가비아 라이브러리 | BeautifulSoup와 requests로 웹 파싱해보기](https://library.gabia.com/contents/9239/) - 파이썬 웹 스크래핑 참고
 - [나도코딩 | youtube | 웹 크롤링? 웹 스크래핑!](https://www.youtube.com/watch?v=yQ20jZwDjTE&ab_channel=%EB%82%98%EB%8F%84%EC%BD%94%EB%94%A9) - 파이썬 웹 스크래핑 참고
 - [zetbouaka | velog | 라프텔 API](https://velog.io/@zetbouaka/series/%EB%9D%BC%ED%94%84%ED%85%94-API%EB%B9%84%EA%B3%B5%EC%8B%9D) - 라프텔 API 참고
 - [코코블루 | 네이버블로그 | 디스코드 서버](https://blog.naver.com/PostView.naver?blogId=6116949&logNo=221949748751&redirect=Dlog&widgetTypeCall=true&directAccess=false) - 서버 입장/퇴장 사람 감지 코드 참고
