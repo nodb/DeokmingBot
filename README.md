@@ -83,7 +83,9 @@ pip install -r requirement.txt 명령어로 한번에 설치 가능합니다.
 ```
 수행 가능한 명령어들을 조회할 수 있습니다.
 ```
-✅ /명령어
+✅ /명령어  
+<img alt = "명령어1" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EB%AA%85%EB%A0%B9%EC%96%B41.jpg" width="725">
+<img alt = "명령어2" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EB%AA%85%EB%A0%B9%EC%96%B42.jpg" width="725">
 
 🔍 /애니 [작품]
 ```
@@ -91,7 +93,10 @@ pip install -r requirement.txt 명령어로 한번에 설치 가능합니다.
 작품에 대한 간단한 개요와 세부 내용 및 시청할 수 있는 링크를 제공합니다.
 만약 작품명이 잘못 입력한 경우 채팅방에 오류 알림 메세지를 반환합니다.
 ```
-✅ /애니 스파이패밀리
+✅ /애니 스파이패밀리  
+<img alt = "애니1" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EC%95%A0%EB%8B%881.jpg" width="725">
+<img alt = "애니2" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EC%95%A0%EB%8B%882.jpg" width="725">
+
 
 🔍 /장르 [장르1] [장르2]..
 ```
@@ -99,21 +104,28 @@ pip install -r requirement.txt 명령어로 한번에 설치 가능합니다.
 '개그|공포|드라마|로맨스|모험|무협|미스터리|범죄|스릴러|스포츠|시대물|아동|아이돌|액션|음식|음악|이세계|일상|재난|추리|치유|특촬|판타지'
 이 생성되고 장르를 선택하려면 '+', 제외하려면 '-'를 입력하면 조건을 만족하는 추천 작품들을 출력합니다.
 ```
-✅ /장르 [개그]+ [액션]+ [판타지]-
+✅ /장르 [개그]+ [액션]+ [판타지]-  
+<img alt = "장르1" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EC%9E%A5%EB%A5%B41.jpg" width="725">
+<img alt = "장르2" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EC%9E%A5%EB%A5%B42.jpg" width="725">
+<img alt = "장르3" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EC%9E%A5%EB%A5%B43.jpg" width="725">
 
 🔍 /인기 [기간]
 ```
 '/인기'를 입력하면 기간 옵션 '실시간|이번주|분기|역대'이 생성되고
 기간 선택시 해당 기간의 인기 작품들을 출력합니다.
 ```
-✅ /인기 이번주
+✅ /인기 이번주  
+<img alt = "인기1" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EC%9D%B8%EA%B8%B01.jpg" width="725">
+<img alt = "인기2" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EC%9D%B8%EA%B8%B02.jpg" width="725">
 
 🔍 /신작 [요일]
 ```
 '/신작'을 입력하면 요일 옵션 '오늘|월요일|화요일|수요일|목요일|금요일|토요일|일요일'이 생성되고
 요일 선택시 해당 요일의 현재 방영중인 신작을 출력합니다.
 ```
-✅ /신작 월요일
+✅ /신작 월요일  
+<img alt = "신작1" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EC%8B%A0%EC%9E%911.jpg" width="725">
+<img alt = "신작2" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EC%8B%A0%EC%9E%912.jpg" width="725">
 
 🔍 /분기 [년도] [분기]
 ```
@@ -121,12 +133,17 @@ pip install -r requirement.txt 명령어로 한번에 설치 가능합니다.
 선택시 해당 년도의 분기에 방영했던 모든 작품들을 인기순으로 출력합니다.
 만약 년도를 잘못 입력할 경우 채팅방에 오류 알림 메세지를 반환합니다.
 ```
-✅ /분기 2022 3
+✅ /분기 2022 3  
+<img alt = "분기1" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EB%B6%84%EA%B8%B01.jpg" width="725">
+<img alt = "분기2" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EB%B6%84%EA%B8%B02.jpg" width="725">
 
 ✨ 그 외 소소한 기능으로 네이버 실시간 인기 검색어 순위를 확인하는 `/실검` 명령어, 디스코드 봇의 지연율을 확인하는 `/지연` 명령어, 제작자를 확인하는 `/제작` 명령어가 있습니다.  
 ✅ /실검  
+<img alt = "실검" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EC%8B%A4%EA%B2%80.jpg" width="725">
 ✅ /지연  
+<img alt = "지연" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EC%A7%80%EC%97%B0.jpg" width="725">
 ✅ /제작
+<img alt = "제작" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EC%A0%9C%EC%9E%91.jpg" width="725">
 
 ## 📚️ Deployment
 
