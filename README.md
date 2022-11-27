@@ -140,9 +140,11 @@ pip install -r requirement.txt 명령어로 한번에 설치 가능합니다.
 ✨ 그 외 소소한 기능으로 네이버 실시간 인기 검색어 순위를 확인하는 `/실검` 명령어, 디스코드 봇의 지연율을 확인하는 `/지연` 명령어, 제작자를 확인하는 `/제작` 명령어가 있습니다.  
 ✅ /실검  
 <img alt = "실검" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EC%8B%A4%EA%B2%80.jpg" width="725">
+
 ✅ /지연  
 <img alt = "지연" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EC%A7%80%EC%97%B0.jpg" width="725">
-✅ /제작
+
+✅ /제작  
 <img alt = "제작" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EC%A0%9C%EC%9E%91.jpg" width="725">
 
 ## 📚️ Deployment
