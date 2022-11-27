@@ -177,7 +177,7 @@ pip install -r requirement.txt 명령어로 한번에 설치 가능합니다.
 - [최신코딩 | youtube | repl.it 24시간 서버 구축](https://www.youtube.com/watch?v=qj_f1KDh6Gg&ab_channel=%EC%B5%9C%EC%8B%A0%EC%BD%94%EB%94%A9) - repl.it & uptimerobot 서버 호스팅 참고
 - [뒬탕 | tistory | 리플릿 사용법 및 호스팅](https://programming4myself.tistory.com/4) - repl.it & uptimerobot 서버 호스팅 참고
 
-## 🧑‍💻 Developer
+## ‍💻 Developer
 
 | 학과         | 학번     | 이름   |
 | ------------ | -------- | ------ |
