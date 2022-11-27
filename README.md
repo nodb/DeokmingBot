@@ -78,6 +78,10 @@ pip install -r requirement.txt 명령어로 한번에 설치 가능합니다.
 **덕밍아웃 봇**은 다음과 같은 기능을 제공합니다.
 
 ✨ 서버에 새로운 멤버가 입장하거나 퇴장 시에 환영 문구 또는 퇴장 알림 메세지를 출력합니다.
+✅ /입장  
+<img alt = "입장" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%EC%9E%85%EC%9E%A5.jpg" width="725">  
+✅ /퇴장  
+<img alt = "퇴장" src="https://raw.githubusercontent.com/nodb/DeokmingBot/main/resources/command_%ED%87%B4%EC%9E%A5.jpg" width="725">  
 
 📝 /명령어
 ```
