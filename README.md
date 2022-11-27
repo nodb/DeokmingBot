@@ -11,7 +11,7 @@
 
 **📁 /resources**
 ```
-🎨 command_*.png
+🎨 command_*.jpg
 명령어 수행 이미지
 
 🎨 logo.png
