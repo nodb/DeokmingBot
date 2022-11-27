@@ -159,7 +159,7 @@ pip install -r requirement.txt 명령어로 한번에 설치 가능합니다.
     - 관리자 권한을 허용해야 모든 기능을 사용할 수 있습니다.
 ---
 **서버 호스팅**  
-덕밍아웃 봇은 [replit](https://replit.com/@nodb/DeokmingBot#main.py), [uptimerobot](https://uptimerobot.com/)을 이용하여 배포되며 상시 작동 중입니다. 
+덕밍아웃 봇은 [replit](https://replit.com/@nodb/DeokmingBot#main.py), [uptimerobot](https://uptimerobot.com/)을 이용하여 배포되며 상시 작동이 가능합니다. 
 - [replit](https://replit.com/@nodb/DeokmingBot#main.py) : 프로젝트 생성(웹 프레임워크로 사이트 제작)
 - [uptimerobot](https://uptimerobot.com/) : 호스팅 유지(웹 사이트 주기적 접근)
 
